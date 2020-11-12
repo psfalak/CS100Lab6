@@ -17,7 +17,7 @@ class Container {
         Container(Sort* function) : sort_function(function) { };
 
         /* Non Virtual Functions */
-        void set_sort_function(Sort* sort_function); // set the type of sorting algorithm
+        void set_sort_function(Sort* sort_function){this->sort_function = sort_function;} // set the type of sorting algorithm
 
         /* Pure Virtual Functions */
         // push the top pointer of the tree into container
@@ -26,6 +26,7 @@ class Container {
         virtual void print() = 0;
         // calls on the previously set sorting-algorithm. Checks if sort_function is not null, throw exception if otherwise
         virtual void sort() = 0;
+ 
 
         /* Essentially the only functions needed to sort */
         //switch tree locations

@@ -2,24 +2,25 @@
 #define __bubbleSort_HPP__
 
 #include "container.hpp"
+#include "sort.hpp"
 
-class Container;
+class Container; 
 
-class BubbleSort : Sort {
+class BubbleSort : public Sort {
     public:
         /* Constructors */
-        Sort();
+        BubbleSort(){}
 
         /* Pure Virtual Functions */
         virtual void sort(Container* container){
 	   int i;
 	   int j;
-	   int  size = container.size();
+	   int  size = container->size();
 	   
 	   for(i = 0; i < size - 1; i++){
 	      for(j = 0; j < size - i - 1; j++){
-		if(container.at(j) > container.at(j+1)){
-		   swap(container.at(j), container.at(j + 1));
+		if(container->at(j)->evaluate() > container->at(j+1)->evaluate()){
+		   container->swap(j, j + 1);
 		 }
 	      }
 	   }
